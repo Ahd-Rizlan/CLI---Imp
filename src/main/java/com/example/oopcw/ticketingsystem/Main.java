@@ -30,9 +30,7 @@ public class Main {
                     Please enter your choice
                     1. Start Simulation
                     2. Change configuration Values 
-                    3. PlaceHolder 1
-                    4. PlaceHolder 2
-                    5. Exit
+                    3. Exit
                     ----------------------------------------
                     Enter your choice :  """);
             switch (input.nextLine().toLowerCase()) {
@@ -43,9 +41,11 @@ public class Main {
                     configurationService.setConfigurationFile();
                     break;
                 case "3":
-
+                    System.out.println("Exiting the Ticketing System");
+                    System.exit(0);
                     break;
-                case "4":
+                default:
+                    System.out.println("Invalid choice");
             }
         }
     }
@@ -90,11 +90,11 @@ public class Main {
         for (int i = 0; i < Config.DefaultContacts; i++) {
             Thread defaultVendor = new Thread(new Vendor(Config.TicketsPerRelease, ticketpool, configuration));
 
-            // Config.TotalNumberOfVendors++;
+            Config.TotalNumberOfVendors++;
             vendors.add(defaultVendor);
-//            defaultVendor.start();
+            //defaultVendor.start();
         }
-        Config.TotalNumberOfVendors = vendors.size();
+        //   Config.TotalNumberOfVendors = vendors.size();
         for (Thread vendor : vendors) {
             vendor.start();
         }

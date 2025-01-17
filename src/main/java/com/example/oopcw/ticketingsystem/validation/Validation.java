@@ -33,13 +33,13 @@ public class Validation {
             System.out.println(prompt);
             response = input.nextLine();
             if (response.equalsIgnoreCase("YES") || response.equalsIgnoreCase("Y")) {
-                System.out.println("Vip");
+                System.out.println("Vip Customers Created");
 
                 return true;
                 // break;
             }
             if (response.equalsIgnoreCase("NO") || response.equalsIgnoreCase("N")) {
-                System.out.println("Vcdip");
+                System.out.println("Regular Customers Created");
 
                 return false;
                 //  break;
